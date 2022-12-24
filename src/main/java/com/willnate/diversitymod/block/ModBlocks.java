@@ -19,7 +19,7 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> BLOCK_OF_RUBY_BLOCK = BLOCKS.register("block_of_ruby",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> BLOCK_OF_RUBY_ITEM = ITEMS.register("block_of_ruby",
             () -> new BlockItem(BLOCK_OF_RUBY_BLOCK.get(), new Item.Properties()));
     public static void register(IEventBus eventBus){
