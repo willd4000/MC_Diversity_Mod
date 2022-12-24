@@ -50,8 +50,18 @@ public class DiversityMod
             event.accept(ModItems.RUBY);
             event.accept(ModItems.SAPPHIRE);
             event.accept(ModItems.TOPAZ);
+            event.accept(ModItems.AMBER_SHARD);
+            event.accept(ModItems.JADE_SHARD);
             event.accept(ModBlocks.BLOCK_OF_RUBY_BLOCK);
             event.accept(ModBlocks.BLOCK_OF_RUBY_ITEM);
+            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_BLOCK);
+            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_ITEM);
+            event.accept(ModBlocks.BLOCK_OF_TOPAZ_BLOCK);
+            event.accept(ModBlocks.BLOCK_OF_TOPAZ_ITEM);
+            event.accept(ModBlocks.BLOCK_OF_AMBER_BLOCK);
+            event.accept(ModBlocks.BLOCK_OF_AMBER_ITEM);
+            event.accept(ModBlocks.BLOCK_OF_JADE_BLOCK);
+            event.accept(ModBlocks.BLOCK_OF_JADE_ITEM);
         }
 
     }

@@ -22,6 +22,22 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> BLOCK_OF_RUBY_ITEM = ITEMS.register("block_of_ruby",
             () -> new BlockItem(BLOCK_OF_RUBY_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> BLOCK_OF_SAPPHIRE_BLOCK = BLOCKS.register("block_of_sapphire",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Item> BLOCK_OF_SAPPHIRE_ITEM = ITEMS.register("block_of_sapphire",
+            () -> new BlockItem(BLOCK_OF_SAPPHIRE_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> BLOCK_OF_TOPAZ_BLOCK = BLOCKS.register("block_of_topaz",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Item> BLOCK_OF_TOPAZ_ITEM = ITEMS.register("block_of_topaz",
+            () -> new BlockItem(BLOCK_OF_TOPAZ_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> BLOCK_OF_AMBER_BLOCK = BLOCKS.register("block_of_amber",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Item> BLOCK_OF_AMBER_ITEM = ITEMS.register("block_of_amber",
+            () -> new BlockItem(BLOCK_OF_AMBER_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> BLOCK_OF_JADE_BLOCK = BLOCKS.register("block_of_jade",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Item> BLOCK_OF_JADE_ITEM = ITEMS.register("block_of_jade",
+            () -> new BlockItem(BLOCK_OF_JADE_BLOCK.get(), new Item.Properties()));
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

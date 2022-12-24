@@ -26,6 +26,10 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TOPAZ = ITEMS.register("topaz",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AMBER_SHARD = ITEMS.register("amber_shard",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> JADE_SHARD = ITEMS.register("jade_shard",
+            () -> new Item(new Item.Properties()));
     // register method for items
     public static void register(IEventBus eventBus){
         ITEMS.register((eventBus));

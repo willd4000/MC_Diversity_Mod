@@ -3,7 +3,17 @@
   "item.diversitymod.ruby": "Ruby",
   "item.diversitymod.sapphire": "Sapphire",
   "item.diversitymod.topaz": "Topaz",
+  "item.diversitymod.amber_shard": "Amber Shard",
+  "item.diversitymod.jade_shard": "Jade Shard",
   "block.diversitymod.block_of_ruby": "Block of Ruby",
-  "item.diversitymod.block_of_ruby": "Block of Ruby"
+  "item.diversitymod.block_of_ruby": "Block of Ruby",
+  "block.diversitymod.block_of_sapphire": "Block of Sapphire",
+  "item.diversitymod.block_of_sapphire": "Block of Sapphire",
+  "block.diversitymod.block_of_topaz": "Block of Topaz",
+  "item.diversitymod.block_of_topaz": "Block of Topaz",
+  "block.diversitymod.block_of_amber": "Block of Amber",
+  "item.diversitymod.block_of_amber": "Block of Amber",
+  "block.diversitymod.block_of_jade": "Block of Jade",
+  "item.diversitymod.block_of_jade": "Block of Jade"
 
 }
