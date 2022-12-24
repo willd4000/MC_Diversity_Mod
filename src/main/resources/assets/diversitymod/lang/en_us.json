@@ -1,3 +1,9 @@
 {
-  "item.diversitymod.banknote": "Banknote"
+  "item.diversitymod.banknote": "Banknote",
+  "item.diversitymod.ruby": "Ruby",
+  "item.diversitymod.sapphire": "Sapphire",
+  "item.diversitymod.topaz": "Topaz",
+  "block.diversitymod.block_of_ruby": "Block of Ruby",
+  "item.diversitymod.block_of_ruby": "Block of Ruby"
+
 }

@@ -1,6 +1,7 @@
 package com.willnate.diversitymod;
 
 import com.mojang.logging.LogUtils;
+import com.willnate.diversitymod.block.ModBlocks;
 import com.willnate.diversitymod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,6 +29,7 @@ public class DiversityMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -45,6 +47,11 @@ public class DiversityMod
     {
         if (event.getTab() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.BANKNOTE);
+            event.accept(ModItems.RUBY);
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.TOPAZ);
+            event.accept(ModBlocks.BLOCK_OF_RUBY_BLOCK);
+            event.accept(ModBlocks.BLOCK_OF_RUBY_ITEM);
         }
 
     }
