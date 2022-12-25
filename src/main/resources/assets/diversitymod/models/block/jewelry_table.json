@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "down": "minecraft:block/oak_planks",
+    "east": "diversitymod:block/jewelry_table_side",
+    "north": "diversitymod:block/jewelry_table_front",
+    "particle": "diversitymod:block/jewelry_table_front",
+    "south": "diversitymod:block/jewelry_table_side",
+    "up": "diversitymod:block/jewelry_table_top",
+    "west": "diversitymod:block/jewelry_table_front"
+  }
+}

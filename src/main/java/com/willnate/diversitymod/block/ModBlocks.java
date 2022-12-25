@@ -38,6 +38,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Item> BLOCK_OF_JADE_ITEM = ITEMS.register("block_of_jade",
             () -> new BlockItem(BLOCK_OF_JADE_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> JEWELRY_TABLE_BLOCK = BLOCKS.register("jewelry_table",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f)));
+    public static final RegistryObject<Item> JEWELRY_TABLE_ITEM = ITEMS.register("jewelry_table",
+            () -> new BlockItem(JEWELRY_TABLE_BLOCK.get(), new Item.Properties()));
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

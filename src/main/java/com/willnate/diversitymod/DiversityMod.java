@@ -62,6 +62,8 @@ public class DiversityMod
             event.accept(ModBlocks.BLOCK_OF_AMBER_ITEM);
             event.accept(ModBlocks.BLOCK_OF_JADE_BLOCK);
             event.accept(ModBlocks.BLOCK_OF_JADE_ITEM);
+            event.accept(ModBlocks.JEWELRY_TABLE_BLOCK);
+            event.accept(ModBlocks.JEWELRY_TABLE_ITEM);
         }
 
     }
