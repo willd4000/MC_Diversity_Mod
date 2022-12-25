@@ -3,6 +3,7 @@ package com.willnate.diversitymod;
 import com.mojang.logging.LogUtils;
 import com.willnate.diversitymod.block.ModBlocks;
 import com.willnate.diversitymod.item.ModItems;
+import com.willnate.diversitymod.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +31,7 @@ public class DiversityMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -71,6 +73,9 @@ public class DiversityMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            ModVillagers.registerPOIs();;
+        });
     }
 
 

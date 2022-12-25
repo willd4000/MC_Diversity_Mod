@@ -17,6 +17,7 @@
   "item.diversitymod.block_of_jade": "Block of Jade",
   "block.diversitymod.jewelry_table": "Jewelry Table",
   "item.diversitymod.jewelry_table": "Jewelry Table",
-  "item.diversitymod.crown": "Crown"
+  "item.diversitymod.crown": "Crown",
+  "entity.minecraft.villager.diversitymod.jeweler": "Jeweler"
 
 }
