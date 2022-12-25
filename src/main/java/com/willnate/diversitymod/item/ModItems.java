@@ -3,8 +3,9 @@ package com.willnate.diversitymod.item;
 import com.willnate.diversitymod.DiversityMod;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.*;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +31,19 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> JADE_SHARD = ITEMS.register("jade_shard",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<ArmorItem> CROWN = ITEMS.register("crown",
+            () -> new ArmorItem(ModArmorMaterials.CROWN, EquipmentSlot.HEAD, new Item.Properties()));
+
+//    public static class Foods {
+//        public static final FoodProperties FOOD = new FoodProperties.Builder()
+//                .nutrition(1)
+//                .saturationMod(1)
+//                // other effects
+//                .build();
+//    }
+
+
     // register method for items
     public static void register(IEventBus eventBus){
         ITEMS.register((eventBus));
