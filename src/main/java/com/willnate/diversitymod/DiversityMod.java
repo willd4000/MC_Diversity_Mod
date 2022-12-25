@@ -2,8 +2,12 @@ package com.willnate.diversitymod;
 
 import com.mojang.logging.LogUtils;
 import com.willnate.diversitymod.block.ModBlocks;
+import com.willnate.diversitymod.fluid.ModFluidTypes;
+import com.willnate.diversitymod.fluid.ModFluids;
 import com.willnate.diversitymod.item.ModItems;
 import com.willnate.diversitymod.villager.ModVillagers;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,6 +36,8 @@ public class DiversityMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModFluids.register((modEventBus));
+        ModFluidTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -67,6 +73,7 @@ public class DiversityMod
             event.accept(ModBlocks.JEWELRY_TABLE_BLOCK);
             event.accept(ModBlocks.JEWELRY_TABLE_ITEM);
             event.accept(ModItems.CROWN);
+            event.accept(ModItems.MERCURY_BUCKET);
         }
 
     }
@@ -88,6 +95,8 @@ public class DiversityMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+//            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MERCURY.get(), RenderType.translucent());
+//            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MERCURY.get(), RenderType.translucent());
         }
     }
 }

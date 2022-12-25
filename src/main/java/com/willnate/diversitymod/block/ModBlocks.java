@@ -1,9 +1,12 @@
 package com.willnate.diversitymod.block;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.fluid.ModFluids;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -42,6 +45,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f)));
     public static final RegistryObject<Item> JEWELRY_TABLE_ITEM = ITEMS.register("jewelry_table",
             () -> new BlockItem(JEWELRY_TABLE_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<LiquidBlock> MERCURY_BLOCK = BLOCKS.register("mercury_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_MERCURY, BlockBehaviour.Properties.copy(Blocks.WATER)));
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

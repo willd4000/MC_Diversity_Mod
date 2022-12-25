@@ -1,6 +1,7 @@
 package com.willnate.diversitymod.item;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.fluid.ModFluids;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -34,6 +35,10 @@ public class ModItems {
 
     public static final RegistryObject<ArmorItem> CROWN = ITEMS.register("crown",
             () -> new ArmorItem(ModArmorMaterials.CROWN, EquipmentSlot.HEAD, new Item.Properties()));
+    public static final RegistryObject<Item> MERCURY_BUCKET = ITEMS.register("mercury_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_MERCURY,
+                    new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
 
 //    public static class Foods {
 //        public static final FoodProperties FOOD = new FoodProperties.Builder()

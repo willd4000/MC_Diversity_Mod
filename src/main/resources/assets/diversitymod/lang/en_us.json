@@ -18,6 +18,7 @@
   "block.diversitymod.jewelry_table": "Jewelry Table",
   "item.diversitymod.jewelry_table": "Jewelry Table",
   "item.diversitymod.crown": "Crown",
-  "entity.minecraft.villager.diversitymod.jeweler": "Jeweler"
+  "entity.minecraft.villager.diversitymod.jeweler": "Jeweler",
+  "item.diversitymod.mercury_bucket": "Mercury Bucket"
 
 }
