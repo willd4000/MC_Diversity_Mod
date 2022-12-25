@@ -14,12 +14,12 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModFluidTypes {
     public static final ResourceLocation WATER_STILL_RL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOWING_RL = new ResourceLocation("block/water_flow");
-    public static final ResourceLocation MERCURY_OVERLAY_RL = new ResourceLocation(DiversityMod.MOD_ID, "misc/in_soap_water");
+    public static final ResourceLocation MERCURY_OVERLAY_RL = new ResourceLocation(DiversityMod.MOD_ID, "misc/in_mercury");
 
     public static final DeferredRegister<FluidType> FLUID_TYPES =
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, DiversityMod.MOD_ID);
 
-    public static final RegistryObject<FluidType> MERCURY_FLUID_TYPE = register("soap_water_fluid",
+    public static final RegistryObject<FluidType> MERCURY_FLUID_TYPE = register("mercury_fluid",
             FluidType.Properties.create().density(25).viscosity(5).supportsBoating(true).sound(SoundAction.get("drink"),
                     SoundEvents.HONEY_DRINK));
 
@@ -27,7 +27,7 @@ public class ModFluidTypes {
 
     private static RegistryObject<FluidType> register(String name, FluidType.Properties properties) {
         return FLUID_TYPES.register(name, () -> new BaseFluidType(WATER_STILL_RL, WATER_FLOWING_RL, MERCURY_OVERLAY_RL,
-                0xA1454545, new Vector3f(224f / 255f, 56f / 255f, 208f / 255f), properties));
+                0xFF454545, new Vector3f(60f / 255f, 60f / 255f, 60f / 255f), properties));
     }
 
     public static void register(IEventBus eventBus) {

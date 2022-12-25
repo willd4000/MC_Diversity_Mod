@@ -14,9 +14,9 @@ public class ModFluids {
     public static final DeferredRegister<Fluid> FLUIDS =
             DeferredRegister.create(ForgeRegistries.FLUIDS, DiversityMod.MOD_ID);
 
-    public static final RegistryObject<FlowingFluid> SOURCE_MERCURY = FLUIDS.register("source_milk",
+    public static final RegistryObject<FlowingFluid> SOURCE_MERCURY = FLUIDS.register("source_mercury",
             () -> new ForgeFlowingFluid.Source(ModFluids.MERCURY_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> FLOWING_MERCURY = FLUIDS.register("flowing_milk",
+    public static final RegistryObject<FlowingFluid> FLOWING_MERCURY = FLUIDS.register("flowing_mercury",
             () -> new ForgeFlowingFluid.Flowing(ModFluids.MERCURY_FLUID_PROPERTIES));
 
 
