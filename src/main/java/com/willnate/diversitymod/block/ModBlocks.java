@@ -1,7 +1,9 @@
 package com.willnate.diversitymod.block;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.block.custom.SlimeyBerryCropBlock;
 import com.willnate.diversitymod.fluid.ModFluids;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -45,9 +47,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6f)));
     public static final RegistryObject<Item> JEWELRY_TABLE_ITEM = ITEMS.register("jewelry_table",
             () -> new BlockItem(JEWELRY_TABLE_BLOCK.get(), new Item.Properties()));
-
     public static final RegistryObject<LiquidBlock> MERCURY_BLOCK = BLOCKS.register("mercury_block",
             () -> new LiquidBlock(ModFluids.SOURCE_MERCURY, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final RegistryObject<Block> SLIMEY_BERRY_CROP_BLOCK = BLOCKS.register("slimey_berry_crop",
+            () -> new SlimeyBerryCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Item> SLIMEY_BERRY = ITEMS.register("slimey_berry",
+            () -> new BlockItem(SLIMEY_BERRY_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

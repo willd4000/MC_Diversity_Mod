@@ -74,6 +74,7 @@ public class DiversityMod
             event.accept(ModBlocks.JEWELRY_TABLE_ITEM);
             event.accept(ModItems.CROWN);
             event.accept(ModItems.MERCURY_BUCKET);
+            event.accept(ModBlocks.SLIMEY_BERRY);
         }
 
     }
@@ -95,6 +96,7 @@ public class DiversityMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            //ItemBlockRenderTypes.setRenderLayer(ModBlocks.SLIMEY_BERRY_CROP_BLOCK.get(), RenderType.cutout());
 //            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MERCURY.get(), RenderType.translucent());
 //            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MERCURY.get(), RenderType.translucent());
         }

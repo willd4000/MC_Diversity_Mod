@@ -19,6 +19,7 @@
   "item.diversitymod.jewelry_table": "Jewelry Table",
   "item.diversitymod.crown": "Crown",
   "entity.minecraft.villager.diversitymod.jeweler": "Jeweler",
-  "item.diversitymod.mercury_bucket": "Mercury Bucket"
-
+  "item.diversitymod.mercury_bucket": "Mercury Bucket",
+  "item.diversitymod.slimey_berry": "Slimey Berry",
+  "block.diversitymod.slimey_berry_crop": "Slimey Berry Crop"
 }

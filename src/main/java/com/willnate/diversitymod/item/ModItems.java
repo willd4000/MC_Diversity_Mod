@@ -32,7 +32,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> JADE_SHARD = ITEMS.register("jade_shard",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<ArmorItem> CROWN = ITEMS.register("crown",
             () -> new ArmorItem(ModArmorMaterials.CROWN, EquipmentSlot.HEAD, new Item.Properties()));
     public static final RegistryObject<Item> MERCURY_BUCKET = ITEMS.register("mercury_bucket",
