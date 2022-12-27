@@ -9,7 +9,10 @@ import com.willnate.diversitymod.villager.ModVillagers;
 import com.willnate.diversitymod.world.feature.ModConfiguredFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -45,7 +48,8 @@ public class DiversityMod
         modEventBus.addListener(this::commonSetup);
 
         // Register the addCreative method for modloading
-        modEventBus.addListener(this::addCreative);
+        //modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::buildContents);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -53,45 +57,94 @@ public class DiversityMod
 
 
     }
+    public void buildContents(CreativeModeTabEvent.Register event) {
+        event.registerCreativeModeTab(new ResourceLocation(MOD_ID, "example"), builder ->
+                // Set name of tab to display
+                builder.title(Component.translatable("Diversity Mod Items"))
+                        // Set icon of creative tab
+                        .icon(() -> new ItemStack(ModItems.RUBY.get()))
+                        // Add default items to tab
+                        .displayItems((enabledFlags, populator, hasPermissions) -> {
+                            populator.accept(ModItems.BANKNOTE.get());
+                            populator.accept(ModItems.RUBY.get());
+                            populator.accept(ModItems.SAPPHIRE.get());
+                            populator.accept(ModItems.TOPAZ.get());
+                            populator.accept(ModItems.AMBER_SHARD.get());
+                            populator.accept(ModItems.JADE_SHARD.get());
+                            populator.accept(ModBlocks.BLOCK_OF_RUBY_ITEM.get());
+                            populator.accept(ModBlocks.BLOCK_OF_RUBY_BLOCK.get());
+                            populator.accept(ModBlocks.BLOCK_OF_SAPPHIRE_ITEM.get());
+                            populator.accept(ModBlocks.BLOCK_OF_SAPPHIRE_BLOCK.get());
+                            populator.accept(ModBlocks.BLOCK_OF_TOPAZ_ITEM.get());
+                            populator.accept(ModBlocks.BLOCK_OF_TOPAZ_BLOCK.get());
+                            populator.accept(ModBlocks.BLOCK_OF_AMBER_ITEM.get());
+                            populator.accept(ModBlocks.BLOCK_OF_AMBER_BLOCK.get());
+                            populator.accept(ModBlocks.BLOCK_OF_JADE_ITEM.get());
+                            populator.accept(ModBlocks.BLOCK_OF_JADE_BLOCK.get());
+                            populator.accept(ModBlocks.JEWELRY_TABLE_BLOCK.get());
+                            populator.accept(ModBlocks.JEWELRY_TABLE_ITEM.get());
+                            populator.accept(ModItems.CROWN.get());
+                            populator.accept(ModItems.MERCURY_BUCKET.get());
+                            populator.accept(ModBlocks.SLIMEY_BERRY.get());
+                            populator.accept(ModBlocks.OLIVE_LEAVES.get());
+                            populator.accept(ModBlocks.OLIVE_LEAVES_ITEM.get());
+                            populator.accept(ModBlocks.OLIVE_LOG.get());
+                            populator.accept(ModBlocks.OLIVE_LOG_ITEM.get());
+                            populator.accept(ModBlocks.OLIVE_PLANKS.get());
+                            populator.accept(ModBlocks.OLIVE_PLANKS_ITEM.get());
+                            populator.accept(ModBlocks.OLIVE_WOOD.get());
+                            populator.accept(ModBlocks.OLIVE_WOOD_ITEM.get());
+                            populator.accept(ModBlocks.OLIVE_LOG_SAPLING.get());
+                            populator.accept(ModBlocks.OLIVE_LOG_SAPLING_ITEM.get());
+                            populator.accept(ModBlocks.STRIPPED_OLIVE_LOG.get());
+                            populator.accept(ModBlocks.STRIPPED_OLIVE_LOG_ITEM.get());
+                            populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD.get());
+                            populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM.get());
+
+                        })
+        );
+    }
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        if (event.getTab() == CreativeModeTabs.INGREDIENTS){
-            event.accept(ModItems.BANKNOTE);
-            event.accept(ModItems.RUBY);
-            event.accept(ModItems.SAPPHIRE);
-            event.accept(ModItems.TOPAZ);
-            event.accept(ModItems.AMBER_SHARD);
-            event.accept(ModItems.JADE_SHARD);
-            event.accept(ModBlocks.BLOCK_OF_RUBY_BLOCK);
-            event.accept(ModBlocks.BLOCK_OF_RUBY_ITEM);
-            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_BLOCK);
-            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_ITEM);
-            event.accept(ModBlocks.BLOCK_OF_TOPAZ_BLOCK);
-            event.accept(ModBlocks.BLOCK_OF_TOPAZ_ITEM);
-            event.accept(ModBlocks.BLOCK_OF_AMBER_BLOCK);
-            event.accept(ModBlocks.BLOCK_OF_AMBER_ITEM);
-            event.accept(ModBlocks.BLOCK_OF_JADE_BLOCK);
-            event.accept(ModBlocks.BLOCK_OF_JADE_ITEM);
-            event.accept(ModBlocks.JEWELRY_TABLE_BLOCK);
-            event.accept(ModBlocks.JEWELRY_TABLE_ITEM);
-            event.accept(ModItems.CROWN);
-            event.accept(ModItems.MERCURY_BUCKET);
-            event.accept(ModBlocks.SLIMEY_BERRY);
-            event.accept(ModBlocks.OLIVE_LEAVES_ITEM);
-            event.accept(ModBlocks.OLIVE_LEAVES);
-            event.accept(ModBlocks.OLIVE_LOG_ITEM);
-            event.accept(ModBlocks.OLIVE_LOG);
-            event.accept(ModBlocks.OLIVE_PLANKS_ITEM);
-            event.accept(ModBlocks.OLIVE_PLANKS);
-            event.accept(ModBlocks.OLIVE_WOOD_ITEM);
-            event.accept(ModBlocks.OLIVE_WOOD);
-            event.accept(ModBlocks.STRIPPED_OLIVE_LOG_ITEM);
-            event.accept(ModBlocks.STRIPPED_OLIVE_LOG);
-            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
-            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
-            event.accept(ModBlocks.OLIVE_LOG_SAPLING_ITEM);
-            event.accept(ModBlocks.OLIVE_LOG_SAPLING);
-        }
+
+
+//        if (event.getTab() == CreativeModeTabs.INGREDIENTS){
+//            event.accept(ModItems.BANKNOTE);
+//            event.accept(ModItems.RUBY);
+//            event.accept(ModItems.SAPPHIRE);
+//            event.accept(ModItems.TOPAZ);
+//            event.accept(ModItems.AMBER_SHARD);
+//            event.accept(ModItems.JADE_SHARD);
+//            event.accept(ModBlocks.BLOCK_OF_RUBY_BLOCK);
+//            event.accept(ModBlocks.BLOCK_OF_RUBY_ITEM);
+//            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_BLOCK);
+//            event.accept(ModBlocks.BLOCK_OF_SAPPHIRE_ITEM);
+//            event.accept(ModBlocks.BLOCK_OF_TOPAZ_BLOCK);
+//            event.accept(ModBlocks.BLOCK_OF_TOPAZ_ITEM);
+//            event.accept(ModBlocks.BLOCK_OF_AMBER_BLOCK);
+//            event.accept(ModBlocks.BLOCK_OF_AMBER_ITEM);
+//            event.accept(ModBlocks.BLOCK_OF_JADE_BLOCK);
+//            event.accept(ModBlocks.BLOCK_OF_JADE_ITEM);
+//            event.accept(ModBlocks.JEWELRY_TABLE_BLOCK);
+//            event.accept(ModBlocks.JEWELRY_TABLE_ITEM);
+//            event.accept(ModItems.CROWN);
+//            event.accept(ModItems.MERCURY_BUCKET);
+//            event.accept(ModBlocks.SLIMEY_BERRY);
+//            event.accept(ModBlocks.OLIVE_LEAVES_ITEM);
+//            event.accept(ModBlocks.OLIVE_LEAVES);
+//            event.accept(ModBlocks.OLIVE_LOG_ITEM);
+//            event.accept(ModBlocks.OLIVE_LOG);
+//            event.accept(ModBlocks.OLIVE_PLANKS_ITEM);
+//            event.accept(ModBlocks.OLIVE_PLANKS);
+//            event.accept(ModBlocks.OLIVE_WOOD_ITEM);
+//            event.accept(ModBlocks.OLIVE_WOOD);
+//            event.accept(ModBlocks.STRIPPED_OLIVE_LOG_ITEM);
+//            event.accept(ModBlocks.STRIPPED_OLIVE_LOG);
+//            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
+//            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
+//            event.accept(ModBlocks.OLIVE_LOG_SAPLING_ITEM);
+//            event.accept(ModBlocks.OLIVE_LOG_SAPLING);
+//        }
 
     }
 
