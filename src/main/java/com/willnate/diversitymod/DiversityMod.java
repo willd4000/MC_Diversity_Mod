@@ -97,6 +97,7 @@ public class DiversityMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             //ItemBlockRenderTypes.setRenderLayer(ModBlocks.SLIMEY_BERRY_CROP_BLOCK.get(), RenderType.cutout());
+            // note that the above line is no longer necessary, so long that the render type is defined in the stage json files
 //            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_MERCURY.get(), RenderType.translucent());
 //            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_MERCURY.get(), RenderType.translucent());
         }
