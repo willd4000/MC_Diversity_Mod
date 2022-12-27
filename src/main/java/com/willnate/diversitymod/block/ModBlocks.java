@@ -1,20 +1,28 @@
 package com.willnate.diversitymod.block;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.block.custom.ModFlammableRotatedPillarBlock;
 import com.willnate.diversitymod.block.custom.SlimeyBerryCropBlock;
 import com.willnate.diversitymod.fluid.ModFluids;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 
 public class ModBlocks {
     // registering blocks and dropped item (when mined)
@@ -54,6 +62,72 @@ public class ModBlocks {
     public static final RegistryObject<Item> SLIMEY_BERRY = ITEMS.register("slimey_berry",
             () -> new BlockItem(SLIMEY_BERRY_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
                     .build())));
+    public static final RegistryObject<Block> OLIVE_LOG = BLOCKS.register("olive_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+    public static final RegistryObject<Block> OLIVE_WOOD = BLOCKS.register("olive_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<Block> STRIPPED_OLIVE_LOG = BLOCKS.register("stripped_olive_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<Block> STRIPPED_OLIVE_WOOD = BLOCKS.register("stripped_olive_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+    public static final RegistryObject<Block> OLIVE_PLANKS = BLOCKS.register("olive_log_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            });
+    public static final RegistryObject<Block> OLIVE_LEAVES = BLOCKS.register("olive_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            });
+    public static final RegistryObject<Block> OLIVE_LOG_SAPLING = BLOCKS.register("olive_sapling",
+            () -> new SaplingBlock(new AbstractTreeGrower() {
+                @Nullable
+                @Override
+                protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource p_222910_, boolean p_222911_) {
+                    return null;
+                }
+            }, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Item> OLIVE_LOG_ITEM = ITEMS.register("olive_log",
+            () -> new BlockItem(OLIVE_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OLIVE_WOOD_ITEM = ITEMS.register("olive_wood",
+            () -> new BlockItem(OLIVE_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_OLIVE_LOG_ITEM = ITEMS.register("stripped_olive_log",
+            () -> new BlockItem(STRIPPED_OLIVE_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<Item> STRIPPED_OLIVE_WOOD_ITEM = ITEMS.register("stripped_olive_wood",
+            () -> new BlockItem(STRIPPED_OLIVE_WOOD.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OLIVE_PLANKS_ITEM = ITEMS.register("olive_log_planks",
+            () -> new BlockItem(OLIVE_PLANKS.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OLIVE_LEAVES_ITEM = ITEMS.register("olive_leaves",
+            () -> new BlockItem(OLIVE_LEAVES.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OLIVE_LOG_SAPLING_ITEM = ITEMS.register("olive_sapling",
+            () -> new BlockItem(OLIVE_LOG_SAPLING.get(), new Item.Properties()));
+
+
     public static void register(IEventBus eventBus){
         BLOCKS.register(eventBus);
         ITEMS.register(eventBus);

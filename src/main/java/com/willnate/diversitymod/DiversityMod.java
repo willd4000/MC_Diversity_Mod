@@ -75,6 +75,20 @@ public class DiversityMod
             event.accept(ModItems.CROWN);
             event.accept(ModItems.MERCURY_BUCKET);
             event.accept(ModBlocks.SLIMEY_BERRY);
+            event.accept(ModBlocks.OLIVE_LEAVES_ITEM);
+            event.accept(ModBlocks.OLIVE_LEAVES);
+            event.accept(ModBlocks.OLIVE_LOG_ITEM);
+            event.accept(ModBlocks.OLIVE_LOG);
+            event.accept(ModBlocks.OLIVE_PLANKS_ITEM);
+            event.accept(ModBlocks.OLIVE_PLANKS);
+            event.accept(ModBlocks.OLIVE_WOOD_ITEM);
+            event.accept(ModBlocks.OLIVE_WOOD);
+            event.accept(ModBlocks.STRIPPED_OLIVE_LOG_ITEM);
+            event.accept(ModBlocks.STRIPPED_OLIVE_LOG);
+            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
+            event.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM);
+            event.accept(ModBlocks.OLIVE_LOG_SAPLING_ITEM);
+            event.accept(ModBlocks.OLIVE_LOG_SAPLING);
         }
 
     }

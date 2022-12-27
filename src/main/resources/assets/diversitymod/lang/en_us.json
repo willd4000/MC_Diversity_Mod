@@ -21,5 +21,22 @@
   "entity.minecraft.villager.diversitymod.jeweler": "Jeweler",
   "item.diversitymod.mercury_bucket": "Mercury Bucket",
   "item.diversitymod.slimey_berry": "Slimey Berry",
-  "block.diversitymod.slimey_berry_crop": "Slimey Berry Crop"
+  "block.diversitymod.slimey_berry_crop": "Slimey Berry Crop",
+
+  "block.diversitymod.olive_log": "Olive Log",
+  "item.diversitymod.olive_log": "Olive Log",
+  "block.diversitymod.olive_wood": "Olive Wood",
+  "item.diversitymod.olive_wood": "Olive Wood",
+  "block.diversitymod.stripped_olive_log": "Stripped Olive Log",
+  "item.diversitymod.stripped_olive_log": "Stripped Olive Log",
+  "block.diversitymod.stripped_olive_wood": "Stripped Olive Wood",
+  "item.diversitymod.stripped_olive_wood": "Stripped Olive Wood",
+  "block.diversitymod.olive_log_planks": "Olive Planks",
+  "item.diversitymod.olive_log_planks": "Olive Planks",
+  "block.diversitymod.olive_leaves": "Olive Leaves",
+  "item.diversitymod.olive_leaves": "Olive Leaves",
+  "block.diversitymod.olive_sapling": "Olive Sapling",
+  "item.diversitymod.olive_sapling": "Olive Sapling",
+  ,
+
 }
