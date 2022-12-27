@@ -6,6 +6,7 @@ import com.willnate.diversitymod.fluid.ModFluidTypes;
 import com.willnate.diversitymod.fluid.ModFluids;
 import com.willnate.diversitymod.item.ModItems;
 import com.willnate.diversitymod.villager.ModVillagers;
+import com.willnate.diversitymod.world.feature.ModConfiguredFeatures;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,6 +39,7 @@ public class DiversityMod
         ModVillagers.register(modEventBus);
         ModFluids.register((modEventBus));
         ModFluidTypes.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
