@@ -1,6 +1,7 @@
 package com.willnate.diversitymod.block;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.OliveTreeGrower;
 import com.willnate.diversitymod.block.custom.ModFlammableRotatedPillarBlock;
 import com.willnate.diversitymod.block.custom.SlimeyBerryCropBlock;
 import com.willnate.diversitymod.fluid.ModFluids;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -105,13 +107,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<Block> OLIVE_LOG_SAPLING = BLOCKS.register("olive_sapling",
-            () -> new SaplingBlock(new AbstractTreeGrower() {
-                @Nullable
-                @Override
-                protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource p_222910_, boolean p_222911_) {
-                    return null;
-                }
-            }, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+            () -> new SaplingBlock(new OakTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Item> OLIVE_LOG_ITEM = ITEMS.register("olive_log",
             () -> new BlockItem(OLIVE_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> OLIVE_WOOD_ITEM = ITEMS.register("olive_wood",
