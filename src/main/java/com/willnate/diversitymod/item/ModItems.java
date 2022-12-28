@@ -4,6 +4,9 @@ import com.willnate.diversitymod.DiversityMod;
 import com.willnate.diversitymod.fluid.ModFluids;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -39,6 +42,19 @@ public class ModItems {
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
     public static final RegistryObject<Item> OLIVES = ITEMS.register("olives",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
+    public static final RegistryObject<Item> BOWL_OF_OLIVE_OIL = ITEMS.register("olive_oil",
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
+    public static final RegistryObject<Item> BOWL_OF_GRAPE_JUICE = ITEMS.register("grape_juice",
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
+    public static final RegistryObject<Item> BOWL_OF_WINE = ITEMS.register("wine",
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .effect( () -> new MobEffectInstance(MobEffects.CONFUSION, 600, 0), .5f)
+                    .effect( () -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1).build())));
+    public static final RegistryObject<Item> BOWL_OF_STEAMED_RICE = ITEMS.register("steamed_rice",
+            () -> new BowlFoodItem(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(6).saturationMod(6f)
                     .build())));
 
 //    public static class Foods {

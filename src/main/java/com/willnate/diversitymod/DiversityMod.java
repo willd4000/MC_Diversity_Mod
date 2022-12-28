@@ -101,8 +101,12 @@ public class DiversityMod
                             populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD.get());
                             populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM.get());
                             populator.accept(ModItems.OLIVES.get());
+                            populator.accept(ModItems.BOWL_OF_OLIVE_OIL.get());
                             populator.accept(ModBlocks.GRAPES.get());
+                            populator.accept(ModItems.BOWL_OF_GRAPE_JUICE.get());
+                            populator.accept(ModItems.BOWL_OF_WINE.get());
                             populator.accept(ModBlocks.RICE.get());
+                            populator.accept(ModItems.BOWL_OF_STEAMED_RICE.get());
 
 
                         })

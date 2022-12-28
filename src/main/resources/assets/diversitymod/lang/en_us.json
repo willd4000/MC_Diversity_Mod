@@ -40,5 +40,9 @@
   "item.diversitymod.grapes": "Grapes",
   "block.diversitymod.grape_crop": "Grapes",
   "item.diversitymod.rice": "Rice",
-  "block.diversitymod.rice_crop": "Rice"
+  "block.diversitymod.rice_crop": "Rice",
+  "item.diversitymod.olive_oil": "Olive Oil",
+  "item.diversitymod.grape_juice": "Grape Juice",
+  "item.diversitymod.wine": "Wine",
+  "item.diversitymod.steamed_rice": "Steamed Rice"
 }
