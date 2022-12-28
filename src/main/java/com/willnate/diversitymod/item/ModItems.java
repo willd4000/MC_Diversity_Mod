@@ -37,7 +37,9 @@ public class ModItems {
     public static final RegistryObject<Item> MERCURY_BUCKET = ITEMS.register("mercury_bucket",
             () -> new BucketItem(ModFluids.SOURCE_MERCURY,
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
-
+    public static final RegistryObject<Item> OLIVES = ITEMS.register("olives",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
 
 //    public static class Foods {
 //        public static final FoodProperties FOOD = new FoodProperties.Builder()

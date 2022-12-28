@@ -1,7 +1,9 @@
 package com.willnate.diversitymod.block;
 
 import com.willnate.diversitymod.DiversityMod;
+import com.willnate.diversitymod.block.custom.GrapeCropBlock;
 import com.willnate.diversitymod.block.custom.ModFlammableRotatedPillarBlock;
+import com.willnate.diversitymod.block.custom.RiceCropBlock;
 import com.willnate.diversitymod.block.custom.SlimeyBerryCropBlock;
 import com.willnate.diversitymod.fluid.ModFluids;
 import com.willnate.diversitymod.world.feature.tree.OliveTreeGrower;
@@ -67,7 +69,7 @@ public class ModBlocks {
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<Block> STRIPPED_OLIVE_WOOD = BLOCKS.register("stripped_olive_wood",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
-    public static final RegistryObject<Block> OLIVE_PLANKS = BLOCKS.register("olive_log_planks",
+    public static final RegistryObject<Block> OLIVE_PLANKS = BLOCKS.register("olive_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)){
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
@@ -111,12 +113,21 @@ public class ModBlocks {
             () -> new BlockItem(STRIPPED_OLIVE_LOG.get(), new Item.Properties()));
     public static final RegistryObject<Item> STRIPPED_OLIVE_WOOD_ITEM = ITEMS.register("stripped_olive_wood",
             () -> new BlockItem(STRIPPED_OLIVE_WOOD.get(), new Item.Properties()));
-    public static final RegistryObject<Item> OLIVE_PLANKS_ITEM = ITEMS.register("olive_log_planks",
+    public static final RegistryObject<Item> OLIVE_PLANKS_ITEM = ITEMS.register("olive_planks",
             () -> new BlockItem(OLIVE_PLANKS.get(), new Item.Properties()));
     public static final RegistryObject<Item> OLIVE_LEAVES_ITEM = ITEMS.register("olive_leaves",
             () -> new BlockItem(OLIVE_LEAVES.get(), new Item.Properties()));
     public static final RegistryObject<Item> OLIVE_LOG_SAPLING_ITEM = ITEMS.register("olive_sapling",
             () -> new BlockItem(OLIVE_LOG_SAPLING.get(), new Item.Properties()));
+    public static final RegistryObject<Block> GRAPE_CROP_BLOCK = BLOCKS.register("grape_crop",
+            () -> new GrapeCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Item> GRAPES = ITEMS.register("grapes",
+            () -> new BlockItem(GRAPE_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(2f)
+                    .build())));
+    public static final RegistryObject<Block> RICE_CROP_BLOCK = BLOCKS.register("rice_crop",
+            () -> new RiceCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Item> RICE = ITEMS.register("rice",
+            () -> new BlockItem(RICE_CROP_BLOCK.get(), new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){

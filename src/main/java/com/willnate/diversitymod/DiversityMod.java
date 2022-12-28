@@ -100,6 +100,10 @@ public class DiversityMod
                             populator.accept(ModBlocks.STRIPPED_OLIVE_LOG_ITEM.get());
                             populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD.get());
                             populator.accept(ModBlocks.STRIPPED_OLIVE_WOOD_ITEM.get());
+                            populator.accept(ModItems.OLIVES.get());
+                            populator.accept(ModBlocks.GRAPES.get());
+                            populator.accept(ModBlocks.RICE.get());
+
 
                         })
         );
