@@ -107,6 +107,7 @@ public class DiversityMod
                             populator.accept(ModItems.BOWL_OF_WINE.get());
                             populator.accept(ModBlocks.RICE.get());
                             populator.accept(ModItems.BOWL_OF_STEAMED_RICE.get());
+                            populator.accept(ModItems.MINITE_SPEAR.get());
 
 
                         })

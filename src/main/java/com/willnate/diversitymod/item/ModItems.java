@@ -2,17 +2,13 @@ package com.willnate.diversitymod.item;
 
 import com.willnate.diversitymod.DiversityMod;
 import com.willnate.diversitymod.fluid.ModFluids;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffect;
+import com.willnate.diversitymod.item.custom.MiniumSpear;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -37,6 +33,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<ArmorItem> CROWN = ITEMS.register("crown",
             () -> new ArmorItem(ModArmorMaterials.CROWN, EquipmentSlot.HEAD, new Item.Properties()));
+    public static final RegistryObject<MiniumSpear> MINITE_SPEAR = ITEMS.register("minium_spear",
+            () -> new MiniumSpear(new Item.Properties().durability(1000)));
     public static final RegistryObject<Item> MERCURY_BUCKET = ITEMS.register("mercury_bucket",
             () -> new BucketItem(ModFluids.SOURCE_MERCURY,
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
